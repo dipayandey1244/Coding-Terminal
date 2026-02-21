@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Repo Terminal</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/xterm@5.3.0/css/xterm.min.css"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Live Repo: Edit + Run</h1>
+      <p>Edit files on the left, save in browser, run commands in terminal.</p>
+    </header>
+
+    <main class="layout">
+      <aside class="panel files-panel">
+        <div class="panel-title-row">
+          <h2>Files</h2>
+          <button id="refresh-files" type="button">Refresh</button>
+        </div>
+        <ul id="files-list"></ul>
+      </aside>
+
+      <section class="panel editor-panel">
+        <div class="panel-title-row">
+          <h2 id="editor-filename">No file selected</h2>
+          <button id="save-file" type="button" disabled>Save</button>
+        </div>
+        <textarea id="editor" spellcheck="false" placeholder="Select a file to edit..."></textarea>
+      </section>
+
+      <section class="panel terminal-panel">
+        <h2>Terminal</h2>
+        <div id="terminal"></div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/xterm@5.3.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xterm-addon-fit@0.8.0/lib/xterm-addon-fit.min.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
